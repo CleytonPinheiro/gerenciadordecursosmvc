@@ -1,10 +1,21 @@
 <?php
-require __DIR__ . '/../vendor/autoload.php';
+namespace Alura\Cursos\Controller;
 
-$entityManager = (new \Alura\Cursos\Infra\EntityManagerCreator())->getEntityManager();
-$repositorioDeCursos = $entityManager->getRepository(\Alura\Cursos\Entity\Curso::class);
-$cursos = $repositorioDeCursos->findAll();
-?>
+class ListarCursos
+{
+    private $repositorioDeCursos;
+
+    public function __construct()
+    {
+        $entityManager = (new \Alura\Cursos\Infra\EntityManagerCreator())->getEntityManager();
+        $this->$repositorioDeCursos = $entityManager->getRepository
+        (\Alura\Cursos\Entity\Curso::class);
+    }
+
+    public function processaRequisição()
+    {
+        $cursos =$this-> $repositorioDeCursos->findAll();
+        ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -30,3 +41,11 @@ $cursos = $repositorioDeCursos->findAll();
 </div>
 </body>
 </html>
+
+
+<?php
+
+        ?>
+
+    }
+}
