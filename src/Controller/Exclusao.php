@@ -16,7 +16,6 @@ class Exclusao implements InterfaceControladorRequisicao
         $this->entityManager = (new EntityManagerCreator())->getEntityManager();
     }
 
-
     public function processaRequisicao(): void
     {
         $id=filter_input(INPUT_GET, 'id',FILTER_VALIDATE_INT
