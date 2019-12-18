@@ -38,7 +38,7 @@ class Persistencia implements InterfaceControladorRequisicao
 
         if (!is_null($id) && $id !== false) {
             $curso->setId($id);
-            $this->entityManager->merge($curso);
+            $this->entityManager->merge($curso);//*Juntando com os dados do banco*/
         } else {
             $this->entityManager->persist($curso);
         }
